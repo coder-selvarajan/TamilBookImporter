@@ -11,6 +11,24 @@
 		705309822C2709FD00C070B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309812C2709FD00C070B5 /* ContentView.swift */; };
 		705309842C2709FF00C070B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 705309832C2709FF00C070B5 /* Assets.xcassets */; };
 		705309872C2709FF00C070B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 705309862C2709FF00C070B5 /* Preview Assets.xcassets */; };
+		705309902C270A5C00C070B5 /* TamilLitDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7053098E2C270A5C00C070B5 /* TamilLitDB.xcdatamodeld */; };
+		705309922C273E8A00C070B5 /* ImportThirukural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309912C273E8A00C070B5 /* ImportThirukural.swift */; };
+		705309942C273F4E00C070B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309932C273F4E00C070B5 /* PersistenceController.swift */; };
+		705309972C273F9600C070B5 /* thirukkural.json in Resources */ = {isa = PBXBuildFile; fileRef = 705309962C273F9600C070B5 /* thirukkural.json */; };
+		705309AB2C2740C700C070B5 /* Poem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */; };
+		705309AC2C2740C700C070B5 /* Poem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */; };
+		705309AD2C2740C700C070B5 /* Explanation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */; };
+		705309AE2C2740C700C070B5 /* Explanation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */; };
+		705309AF2C2740C700C070B5 /* Section+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */; };
+		705309B02C2740C700C070B5 /* Section+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */; };
+		705309B12C2740C700C070B5 /* SubCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */; };
+		705309B22C2740C700C070B5 /* SubCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */; };
+		705309B32C2740C700C070B5 /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */; };
+		705309B42C2740C700C070B5 /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */; };
+		705309B52C2740C700C070B5 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */; };
+		705309B62C2740C700C070B5 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */; };
+		705309B72C2740C700C070B5 /* MainCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */; };
+		705309B82C2740C700C070B5 /* MainCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +38,24 @@
 		705309832C2709FF00C070B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		705309862C2709FF00C070B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		705309882C2709FF00C070B5 /* TamilBookImporter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TamilBookImporter.entitlements; sourceTree = "<group>"; };
+		7053098F2C270A5C00C070B5 /* TamilLitDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TamilLitDB.xcdatamodel; sourceTree = "<group>"; };
+		705309912C273E8A00C070B5 /* ImportThirukural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportThirukural.swift; sourceTree = "<group>"; };
+		705309932C273F4E00C070B5 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		705309962C273F9600C070B5 /* thirukkural.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thirukkural.json; sourceTree = "<group>"; };
+		7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +88,14 @@
 		7053097E2C2709FD00C070B5 /* TamilBookImporter */ = {
 			isa = PBXGroup;
 			children = (
+				7053099C2C27409D00C070B5 /* Models */,
+				705309952C273F7500C070B5 /* Resources */,
 				7053097F2C2709FD00C070B5 /* TamilBookImporterApp.swift */,
 				705309812C2709FD00C070B5 /* ContentView.swift */,
-				705309832C2709FF00C070B5 /* Assets.xcassets */,
 				705309882C2709FF00C070B5 /* TamilBookImporter.entitlements */,
+				705309912C273E8A00C070B5 /* ImportThirukural.swift */,
+				705309932C273F4E00C070B5 /* PersistenceController.swift */,
+				705309832C2709FF00C070B5 /* Assets.xcassets */,
 				705309852C2709FF00C070B5 /* Preview Content */,
 			);
 			path = TamilBookImporter;
@@ -67,6 +107,36 @@
 				705309862C2709FF00C070B5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		705309952C273F7500C070B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				705309962C273F9600C070B5 /* thirukkural.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7053099C2C27409D00C070B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */,
+				7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */,
+				7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */,
+				705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */,
+				705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */,
+				705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */,
+				705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */,
+				705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */,
+				705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */,
+				705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */,
+				705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */,
+				705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */,
+				705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */,
+				705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */,
+				7053098E2C270A5C00C070B5 /* TamilLitDB.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705309972C273F9600C070B5 /* thirukkural.json in Resources */,
 				705309872C2709FF00C070B5 /* Preview Assets.xcassets in Resources */,
 				705309842C2709FF00C070B5 /* Assets.xcassets in Resources */,
 			);
@@ -139,8 +210,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705309902C270A5C00C070B5 /* TamilLitDB.xcdatamodeld in Sources */,
 				705309822C2709FD00C070B5 /* ContentView.swift in Sources */,
 				705309802C2709FD00C070B5 /* TamilBookImporterApp.swift in Sources */,
+				705309922C273E8A00C070B5 /* ImportThirukural.swift in Sources */,
+				705309942C273F4E00C070B5 /* PersistenceController.swift in Sources */,
+				705309AB2C2740C700C070B5 /* Poem+CoreDataClass.swift in Sources */,
+				705309AC2C2740C700C070B5 /* Poem+CoreDataProperties.swift in Sources */,
+				705309AD2C2740C700C070B5 /* Explanation+CoreDataClass.swift in Sources */,
+				705309AE2C2740C700C070B5 /* Explanation+CoreDataProperties.swift in Sources */,
+				705309AF2C2740C700C070B5 /* Section+CoreDataClass.swift in Sources */,
+				705309B02C2740C700C070B5 /* Section+CoreDataProperties.swift in Sources */,
+				705309B12C2740C700C070B5 /* SubCategory+CoreDataClass.swift in Sources */,
+				705309B22C2740C700C070B5 /* SubCategory+CoreDataProperties.swift in Sources */,
+				705309B32C2740C700C070B5 /* Settings+CoreDataClass.swift in Sources */,
+				705309B42C2740C700C070B5 /* Settings+CoreDataProperties.swift in Sources */,
+				705309B52C2740C700C070B5 /* Book+CoreDataClass.swift in Sources */,
+				705309B62C2740C700C070B5 /* Book+CoreDataProperties.swift in Sources */,
+				705309B72C2740C700C070B5 /* MainCategory+CoreDataClass.swift in Sources */,
+				705309B82C2740C700C070B5 /* MainCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +429,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7053098E2C270A5C00C070B5 /* TamilLitDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7053098F2C270A5C00C070B5 /* TamilLitDB.xcdatamodel */,
+			);
+			currentVersion = 7053098F2C270A5C00C070B5 /* TamilLitDB.xcdatamodel */;
+			path = TamilLitDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 705309742C2709FD00C070B5 /* Project object */;
 }
