@@ -16,7 +16,7 @@ struct TamilBookImporterApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .onAppear {
-                    loadInitialDataIfNeeded()
+//                    loadInitialDataIfNeeded()
                 }
         }
     }

@@ -92,10 +92,10 @@
 				705309952C273F7500C070B5 /* Resources */,
 				7053097F2C2709FD00C070B5 /* TamilBookImporterApp.swift */,
 				705309812C2709FD00C070B5 /* ContentView.swift */,
-				705309882C2709FF00C070B5 /* TamilBookImporter.entitlements */,
 				705309912C273E8A00C070B5 /* ImportThirukural.swift */,
 				705309932C273F4E00C070B5 /* PersistenceController.swift */,
 				705309832C2709FF00C070B5 /* Assets.xcassets */,
+				705309882C2709FF00C070B5 /* TamilBookImporter.entitlements */,
 				705309852C2709FF00C070B5 /* Preview Content */,
 			);
 			path = TamilBookImporter;
