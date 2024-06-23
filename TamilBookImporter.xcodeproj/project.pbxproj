@@ -15,20 +15,21 @@
 		705309922C273E8A00C070B5 /* ImportThirukural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309912C273E8A00C070B5 /* ImportThirukural.swift */; };
 		705309942C273F4E00C070B5 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309932C273F4E00C070B5 /* PersistenceController.swift */; };
 		705309972C273F9600C070B5 /* thirukkural.json in Resources */ = {isa = PBXBuildFile; fileRef = 705309962C273F9600C070B5 /* thirukkural.json */; };
-		705309AB2C2740C700C070B5 /* Poem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */; };
-		705309AC2C2740C700C070B5 /* Poem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */; };
-		705309AD2C2740C700C070B5 /* Explanation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */; };
-		705309AE2C2740C700C070B5 /* Explanation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */; };
-		705309AF2C2740C700C070B5 /* Section+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */; };
-		705309B02C2740C700C070B5 /* Section+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */; };
-		705309B12C2740C700C070B5 /* SubCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */; };
-		705309B22C2740C700C070B5 /* SubCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */; };
-		705309B32C2740C700C070B5 /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */; };
-		705309B42C2740C700C070B5 /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */; };
-		705309B52C2740C700C070B5 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */; };
-		705309B62C2740C700C070B5 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */; };
-		705309B72C2740C700C070B5 /* MainCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */; };
-		705309B82C2740C700C070B5 /* MainCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */; };
+		70FE02A62C2850CC00E75842 /* kural-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 70FE02A52C2850CC00E75842 /* kural-category.json */; };
+		70FE02ED2C285AE900E75842 /* Explanation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02DF2C285AE900E75842 /* Explanation+CoreDataClass.swift */; };
+		70FE02EE2C285AE900E75842 /* Explanation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E02C285AE900E75842 /* Explanation+CoreDataProperties.swift */; };
+		70FE02EF2C285AE900E75842 /* Poem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E12C285AE900E75842 /* Poem+CoreDataClass.swift */; };
+		70FE02F02C285AE900E75842 /* Poem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E22C285AE900E75842 /* Poem+CoreDataProperties.swift */; };
+		70FE02F12C285AE900E75842 /* Settings+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E32C285AE900E75842 /* Settings+CoreDataClass.swift */; };
+		70FE02F22C285AE900E75842 /* Settings+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E42C285AE900E75842 /* Settings+CoreDataProperties.swift */; };
+		70FE02F32C285AE900E75842 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E52C285AE900E75842 /* Book+CoreDataClass.swift */; };
+		70FE02F42C285AE900E75842 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E62C285AE900E75842 /* Book+CoreDataProperties.swift */; };
+		70FE02F52C285AE900E75842 /* MainCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E72C285AE900E75842 /* MainCategory+CoreDataClass.swift */; };
+		70FE02F62C285AE900E75842 /* MainCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E82C285AE900E75842 /* MainCategory+CoreDataProperties.swift */; };
+		70FE02F72C285AE900E75842 /* Section+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02E92C285AE900E75842 /* Section+CoreDataClass.swift */; };
+		70FE02F82C285AE900E75842 /* Section+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02EA2C285AE900E75842 /* Section+CoreDataProperties.swift */; };
+		70FE02F92C285AE900E75842 /* SubCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02EB2C285AE900E75842 /* SubCategory+CoreDataClass.swift */; };
+		70FE02FA2C285AE900E75842 /* SubCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE02EC2C285AE900E75842 /* SubCategory+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,20 +43,21 @@
 		705309912C273E8A00C070B5 /* ImportThirukural.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportThirukural.swift; sourceTree = "<group>"; };
 		705309932C273F4E00C070B5 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		705309962C273F9600C070B5 /* thirukkural.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thirukkural.json; sourceTree = "<group>"; };
-		7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
-		705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02A52C2850CC00E75842 /* kural-category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kural-category.json"; sourceTree = "<group>"; };
+		70FE02DF2C285AE900E75842 /* Explanation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02E02C285AE900E75842 /* Explanation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02E12C285AE900E75842 /* Poem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02E22C285AE900E75842 /* Poem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02E32C285AE900E75842 /* Settings+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02E42C285AE900E75842 /* Settings+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02E52C285AE900E75842 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02E62C285AE900E75842 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02E72C285AE900E75842 /* MainCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02E82C285AE900E75842 /* MainCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02E92C285AE900E75842 /* Section+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02EA2C285AE900E75842 /* Section+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Section+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70FE02EB2C285AE900E75842 /* SubCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70FE02EC2C285AE900E75842 /* SubCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		705309952C273F7500C070B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70FE02A52C2850CC00E75842 /* kural-category.json */,
 				705309962C273F9600C070B5 /* thirukkural.json */,
 			);
 			path = Resources;
@@ -120,20 +123,20 @@
 		7053099C2C27409D00C070B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7053099D2C2740C700C070B5 /* Poem+CoreDataClass.swift */,
-				7053099E2C2740C700C070B5 /* Poem+CoreDataProperties.swift */,
-				7053099F2C2740C700C070B5 /* Explanation+CoreDataClass.swift */,
-				705309A02C2740C700C070B5 /* Explanation+CoreDataProperties.swift */,
-				705309A12C2740C700C070B5 /* Section+CoreDataClass.swift */,
-				705309A22C2740C700C070B5 /* Section+CoreDataProperties.swift */,
-				705309A32C2740C700C070B5 /* SubCategory+CoreDataClass.swift */,
-				705309A42C2740C700C070B5 /* SubCategory+CoreDataProperties.swift */,
-				705309A52C2740C700C070B5 /* Settings+CoreDataClass.swift */,
-				705309A62C2740C700C070B5 /* Settings+CoreDataProperties.swift */,
-				705309A72C2740C700C070B5 /* Book+CoreDataClass.swift */,
-				705309A82C2740C700C070B5 /* Book+CoreDataProperties.swift */,
-				705309A92C2740C700C070B5 /* MainCategory+CoreDataClass.swift */,
-				705309AA2C2740C700C070B5 /* MainCategory+CoreDataProperties.swift */,
+				70FE02DF2C285AE900E75842 /* Explanation+CoreDataClass.swift */,
+				70FE02E02C285AE900E75842 /* Explanation+CoreDataProperties.swift */,
+				70FE02E12C285AE900E75842 /* Poem+CoreDataClass.swift */,
+				70FE02E22C285AE900E75842 /* Poem+CoreDataProperties.swift */,
+				70FE02E32C285AE900E75842 /* Settings+CoreDataClass.swift */,
+				70FE02E42C285AE900E75842 /* Settings+CoreDataProperties.swift */,
+				70FE02E52C285AE900E75842 /* Book+CoreDataClass.swift */,
+				70FE02E62C285AE900E75842 /* Book+CoreDataProperties.swift */,
+				70FE02E72C285AE900E75842 /* MainCategory+CoreDataClass.swift */,
+				70FE02E82C285AE900E75842 /* MainCategory+CoreDataProperties.swift */,
+				70FE02E92C285AE900E75842 /* Section+CoreDataClass.swift */,
+				70FE02EA2C285AE900E75842 /* Section+CoreDataProperties.swift */,
+				70FE02EB2C285AE900E75842 /* SubCategory+CoreDataClass.swift */,
+				70FE02EC2C285AE900E75842 /* SubCategory+CoreDataProperties.swift */,
 				7053098E2C270A5C00C070B5 /* TamilLitDB.xcdatamodeld */,
 			);
 			path = Models;
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				705309972C273F9600C070B5 /* thirukkural.json in Resources */,
+				70FE02A62C2850CC00E75842 /* kural-category.json in Resources */,
 				705309872C2709FF00C070B5 /* Preview Assets.xcassets in Resources */,
 				705309842C2709FF00C070B5 /* Assets.xcassets in Resources */,
 			);
@@ -215,20 +219,20 @@
 				705309802C2709FD00C070B5 /* TamilBookImporterApp.swift in Sources */,
 				705309922C273E8A00C070B5 /* ImportThirukural.swift in Sources */,
 				705309942C273F4E00C070B5 /* PersistenceController.swift in Sources */,
-				705309AB2C2740C700C070B5 /* Poem+CoreDataClass.swift in Sources */,
-				705309AC2C2740C700C070B5 /* Poem+CoreDataProperties.swift in Sources */,
-				705309AD2C2740C700C070B5 /* Explanation+CoreDataClass.swift in Sources */,
-				705309AE2C2740C700C070B5 /* Explanation+CoreDataProperties.swift in Sources */,
-				705309AF2C2740C700C070B5 /* Section+CoreDataClass.swift in Sources */,
-				705309B02C2740C700C070B5 /* Section+CoreDataProperties.swift in Sources */,
-				705309B12C2740C700C070B5 /* SubCategory+CoreDataClass.swift in Sources */,
-				705309B22C2740C700C070B5 /* SubCategory+CoreDataProperties.swift in Sources */,
-				705309B32C2740C700C070B5 /* Settings+CoreDataClass.swift in Sources */,
-				705309B42C2740C700C070B5 /* Settings+CoreDataProperties.swift in Sources */,
-				705309B52C2740C700C070B5 /* Book+CoreDataClass.swift in Sources */,
-				705309B62C2740C700C070B5 /* Book+CoreDataProperties.swift in Sources */,
-				705309B72C2740C700C070B5 /* MainCategory+CoreDataClass.swift in Sources */,
-				705309B82C2740C700C070B5 /* MainCategory+CoreDataProperties.swift in Sources */,
+				70FE02ED2C285AE900E75842 /* Explanation+CoreDataClass.swift in Sources */,
+				70FE02EE2C285AE900E75842 /* Explanation+CoreDataProperties.swift in Sources */,
+				70FE02EF2C285AE900E75842 /* Poem+CoreDataClass.swift in Sources */,
+				70FE02F02C285AE900E75842 /* Poem+CoreDataProperties.swift in Sources */,
+				70FE02F12C285AE900E75842 /* Settings+CoreDataClass.swift in Sources */,
+				70FE02F22C285AE900E75842 /* Settings+CoreDataProperties.swift in Sources */,
+				70FE02F32C285AE900E75842 /* Book+CoreDataClass.swift in Sources */,
+				70FE02F42C285AE900E75842 /* Book+CoreDataProperties.swift in Sources */,
+				70FE02F52C285AE900E75842 /* MainCategory+CoreDataClass.swift in Sources */,
+				70FE02F62C285AE900E75842 /* MainCategory+CoreDataProperties.swift in Sources */,
+				70FE02F72C285AE900E75842 /* Section+CoreDataClass.swift in Sources */,
+				70FE02F82C285AE900E75842 /* Section+CoreDataProperties.swift in Sources */,
+				70FE02F92C285AE900E75842 /* SubCategory+CoreDataClass.swift in Sources */,
+				70FE02FA2C285AE900E75842 /* SubCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

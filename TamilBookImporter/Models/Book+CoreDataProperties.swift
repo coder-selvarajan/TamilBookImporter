@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 22/06/24.
+//  Created by Selvarajan on 23/06/24.
 //
 //
 
@@ -25,8 +25,42 @@ extension Book {
     @NSManaged public var noofpoems: Int16
     @NSManaged public var order: Int16
     @NSManaged public var period: String?
-    @NSManaged public var categories: MainCategory?
-    @NSManaged public var poems: Poem?
+    @NSManaged public var categories: NSSet?
+    @NSManaged public var poems: NSSet?
+
+}
+
+// MARK: Generated accessors for categories
+extension Book {
+
+    @objc(addCategoriesObject:)
+    @NSManaged public func addToCategories(_ value: MainCategory)
+
+    @objc(removeCategoriesObject:)
+    @NSManaged public func removeFromCategories(_ value: MainCategory)
+
+    @objc(addCategories:)
+    @NSManaged public func addToCategories(_ values: NSSet)
+
+    @objc(removeCategories:)
+    @NSManaged public func removeFromCategories(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for poems
+extension Book {
+
+    @objc(addPoemsObject:)
+    @NSManaged public func addToPoems(_ value: Poem)
+
+    @objc(removePoemsObject:)
+    @NSManaged public func removeFromPoems(_ value: Poem)
+
+    @objc(addPoems:)
+    @NSManaged public func addToPoems(_ values: NSSet)
+
+    @objc(removePoems:)
+    @NSManaged public func removeFromPoems(_ values: NSSet)
 
 }
 

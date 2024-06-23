@@ -8,39 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(
-        entity: Poem.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Poem.number, ascending: true)]
-    ) var poems: FetchedResults<Poem>
+//    @FetchRequest(
+//        entity: Poem.entity(),
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Poem.number, ascending: true)]
+//    ) var poems: FetchedResults<Poem>
     
     @State private var info: String = ""
     @State var poemCount: Int = 0
-    
-    private func clearAllPoems() {
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Poem")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try viewContext.execute(deleteRequest)
-            try viewContext.save()
-        } catch let error as NSError {
-            print("Could not delete poems. \(error), \(error.userInfo)")
-        }
-    }
-    
-    private func countPoems() -> Int {
-        let fetchRequest: NSFetchRequest<Poem> = Poem.fetchRequest()
-        var count = 0
-        
-        do {
-            count = try viewContext.count(for: fetchRequest)
-        } catch let error as NSError {
-            print("Could not count poems. \(error), \(error.userInfo)")
-        }
-        
-        return count
-    }
     
     var body: some View {
         VStack {
@@ -56,9 +30,11 @@ struct ContentView: View {
             
             Button {
                 let count = countPoems()
+                let expCount = countExplanations()
+                let bookCount = countBooks()
                 
                 clearAllPoems()
-                info = "\(count) poems cleared successfully!"
+                info = "\(bookCount) books, \(count) poems and \(expCount) explanations cleared successfully!"
             } label: {
                 Text("Clear Database ")
                     .padding(10)
@@ -75,7 +51,6 @@ struct ContentView: View {
             }
             .background(.blue)
             .cornerRadius(10.0)
-            
             
             Spacer()
             

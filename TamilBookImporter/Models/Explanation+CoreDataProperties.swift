@@ -2,7 +2,7 @@
 //  Explanation+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 22/06/24.
+//  Created by Selvarajan on 23/06/24.
 //
 //
 
@@ -21,9 +21,9 @@ extension Explanation {
     @NSManaged public var info: String?
     @NSManaged public var language: String?
     @NSManaged public var meaning: String?
-    @NSManaged public var title: String?
-    @NSManaged public var subtitle: String?
     @NSManaged public var order: Int16
+    @NSManaged public var subtitle: String?
+    @NSManaged public var title: String?
     @NSManaged public var poem: Poem?
 
 }

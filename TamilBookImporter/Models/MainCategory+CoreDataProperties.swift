@@ -2,7 +2,7 @@
 //  MainCategory+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 22/06/24.
+//  Created by Selvarajan on 23/06/24.
 //
 //
 
@@ -18,9 +18,12 @@ extension MainCategory {
 
     @NSManaged public var id: UUID?
     @NSManaged public var info: String?
-    @NSManaged public var order: Int16
+    @NSManaged public var number: Int16
     @NSManaged public var subtitle: String?
     @NSManaged public var title: String?
+    @NSManaged public var start: Int16
+    @NSManaged public var end: Int16
+    @NSManaged public var groupname: String?
     @NSManaged public var book: Book?
     @NSManaged public var poems: NSSet?
     @NSManaged public var subCategories: NSSet?

@@ -19,8 +19,10 @@ func loadThirukural() {
         let data = try Data(contentsOf: url)
         let json = try JSONSerialization.jsonObject(with: data, options: [])
         
-        if let jsonDictionary = json as? [String: Any], let kurals = jsonDictionary["kural"] as? [[String: Any]] {
-            parseAndStoreData(kurals: kurals)
+        if  let jsonDictionary = json as? [String: Any],
+            let about = jsonDictionary["about"] as? [String: Any],
+            let kurals = jsonDictionary["kural"] as? [[String: Any]] {
+            parseAndStoreData(about: about, kurals: kurals)
         }
     } catch {
         fatalError("Failed to load initial data: \(error.localizedDescription)")
@@ -28,9 +30,26 @@ func loadThirukural() {
 }
 
 // Function to parse and store data
-func parseAndStoreData(kurals: [[String: Any]]) {
+func parseAndStoreData(about: [String: Any], kurals: [[String: Any]]) {
     let context = PersistenceController.shared.container.viewContext
+    guard let description = about["Description"] as? String else {
+        return
+    }
     
+    let book = Book(context: context)
+    book.id = UUID()
+    book.author = "திருவள்ளுவர்"
+    book.color = "blue"
+    book.name = "திருக்குறள்"
+    book.noofpoems = 1330
+    book.order = 1
+    book.period = ""
+    book.info = description
+    
+    // import Categories
+    importCategories(for: book)
+    
+    //importing poems and meanings
     for kural in kurals {
         guard let number = kural["Number"] as? Int,
               let line1 = kural["Line1"] as? String,
@@ -45,7 +64,7 @@ func parseAndStoreData(kurals: [[String: Any]]) {
               let translation = kural["Translation"] as? String else {
             continue
         }
-        
+         
         let poemEntity = Poem(context: context)
         poemEntity.id = UUID()
         poemEntity.number = Int16(number)
@@ -53,6 +72,8 @@ func parseAndStoreData(kurals: [[String: Any]]) {
         poemEntity.poeminfo = "" // kural["Translation"] as? String ?? ""
         poemEntity.transliteration = "\(transliteration1) \n\(transliteration2)"
         
+        //adding poem to the book
+        book.poems?.adding(poemEntity)
         
         let expl1 = Explanation(context: context)
         expl1.id = UUID()
@@ -129,4 +150,141 @@ func loadInitialDataIfNeeded() {
     }
 }
 
+func clearAllPoems() {
+    let context = PersistenceController.shared.container.viewContext
+    
+    let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Poem")
+    let deleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
+    
+    let deleteRequest3 = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "Book"))
+    let deleteRequest4 = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "Explanation"))
+    
+    let deleteRequest5 = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "MainCategory"))
+    let deleteRequest6 = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "SubCategory"))
+    let deleteRequest7 = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "Section"))
+    
+    do {
+        
+        try context.execute(deleteRequest7)
+        try context.execute(deleteRequest6)
+        try context.execute(deleteRequest5)
+        
+        try context.execute(deleteRequest4)
+        try context.execute(deleteRequest3)
+        try context.execute(deleteRequest2)
+        
+        try context.save()
+    } catch let error as NSError {
+        print("Could not delete poems. \(error), \(error.userInfo)")
+    }
+}
 
+func countBooks() -> Int {
+    let context = PersistenceController.shared.container.viewContext
+    let fetchRequest: NSFetchRequest<Book> = Book.fetchRequest()
+    var count = 0
+    
+    do {
+        count = try context.count(for: fetchRequest)
+    } catch let error as NSError {
+        print("Could not count poems. \(error), \(error.userInfo)")
+    }
+    
+    return count
+}
+
+func countPoems() -> Int {
+    let context = PersistenceController.shared.container.viewContext
+    let fetchRequest: NSFetchRequest<Poem> = Poem.fetchRequest()
+    var count = 0
+    
+    do {
+        count = try context.count(for: fetchRequest)
+    } catch let error as NSError {
+        print("Could not count poems. \(error), \(error.userInfo)")
+    }
+    
+    return count
+}
+
+func countExplanations() -> Int {
+    let context = PersistenceController.shared.container.viewContext
+    let fetchRequest: NSFetchRequest<Explanation> = Explanation.fetchRequest()
+    var count = 0
+    
+    do {
+        count = try context.count(for: fetchRequest)
+    } catch let error as NSError {
+        print("Could not count poems. \(error), \(error.userInfo)")
+    }
+    
+    return count
+}
+
+func importCategories(for book: Book) {
+    let context = PersistenceController.shared.container.viewContext
+    
+    // Load the JSON file
+    if let url = Bundle.main.url(forResource: "kural-category", withExtension: "json") {
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]]
+
+            // Parse the JSON data
+            if let jsonArray = json {
+                for item in jsonArray {
+                    if let section = item["section"] as? [String: Any],
+                       let details = section["detail"] as? [[String: Any]] {
+                        for detail in details {
+                            // MainCategory
+                            let mainCat = MainCategory(context: context)
+                            mainCat.id = UUID()
+                            mainCat.number = (detail["number"] as? Int16)!
+                            mainCat.start = 0
+                            mainCat.end = 0
+                            mainCat.title = detail["name"] as? String
+                            mainCat.groupname = section["tamil"] as? String
+                            mainCat.book = book
+                            
+                            if let chapterGroups = detail["chapterGroup"] as? [String: Any],
+                               let subDetails = chapterGroups["detail"] as? [[String: Any]] {
+                                for subDetail in subDetails {
+                                    
+                                    // SubCategory
+                                    let subCat = SubCategory(context: context)
+                                    subCat.id = UUID()
+                                    subCat.number = (subDetail["number"] as? Int16)!
+                                    subCat.start = 0
+                                    subCat.end = 0
+                                    subCat.title = subDetail["name"] as? String
+                                    subCat.groupname = chapterGroups["tamil"] as? String
+                                    subCat.mainCategory = mainCat
+                                    
+                                    if let chapters = subDetail["chapters"] as? [String: Any],
+                                       let chapterDetails = chapters["detail"] as? [[String: Any]] {
+                                        for chapterDetail in chapterDetails {
+                                            // Section
+                                            let sec = Section(context: context)
+                                            sec.id = UUID()
+                                            sec.number = (chapterDetail["number"] as? Int16)!
+                                            sec.start = (chapterDetail["start"] as? Int16)!
+                                            sec.end = (chapterDetail["end"] as? Int16)!
+                                            sec.title = chapterDetail["name"] as? String
+                                            sec.groupname = chapters["tamil"] as? String
+                                            sec.subCategory = subCat
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                try context.save()
+                print("Data imported successfully!")
+            }
+        } catch {
+            print("Failed to load or parse JSON: \(error)")
+        }
+    }
+    
+}
