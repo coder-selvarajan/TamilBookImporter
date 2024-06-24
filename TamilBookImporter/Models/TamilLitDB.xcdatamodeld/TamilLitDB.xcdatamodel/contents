@@ -25,6 +25,7 @@
         <relationship name="poem" maxCount="1" deletionRule="Nullify" destinationEntity="Poem" inverseName="explanations" inverseEntity="Poem"/>
     </entity>
     <entity name="MainCategory" representedClassName="MainCategory" syncable="YES">
+        <attribute name="bookname" optional="YES" attributeType="String"/>
         <attribute name="end" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="groupname" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -34,7 +35,7 @@
         <attribute name="subtitle" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="book" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="categories" inverseEntity="Book"/>
-        <relationship name="poems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Poem" inverseName="mainCategory" inverseEntity="Poem"/>
+        <relationship name="poems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Poem" inverseName="mainCategory" inverseEntity="Poem"/>
         <relationship name="subCategories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubCategory" inverseName="mainCategory" inverseEntity="SubCategory"/>
     </entity>
     <entity name="Poem" representedClassName="Poem" syncable="YES">
@@ -50,6 +51,7 @@
         <relationship name="subCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubCategory" inverseName="poems" inverseEntity="SubCategory"/>
     </entity>
     <entity name="Section" representedClassName="Section" syncable="YES">
+        <attribute name="bookname" optional="YES" attributeType="String"/>
         <attribute name="end" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="groupname" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -63,6 +65,7 @@
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES"/>
     <entity name="SubCategory" representedClassName="SubCategory" syncable="YES">
+        <attribute name="bookname" optional="YES" attributeType="String"/>
         <attribute name="end" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="groupname" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>

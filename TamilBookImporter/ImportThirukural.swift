@@ -11,7 +11,7 @@ import SwiftUI
 
 // Function to load the initial data
 func loadThirukural() {
-    guard let url = Bundle.main.url(forResource: "thirukkural", withExtension: "json") else {
+    guard let url = Bundle.main.url(forResource: "thirukkural_v2", withExtension: "json") else {
         fatalError("Failed to locate InitialData.json in app bundle.")
     }
     
@@ -61,7 +61,8 @@ func parseAndStoreData(about: [String: Any], kurals: [[String: Any]]) {
               let mk = kural["mk"] as? String,
               let explanation = kural["explanation"] as? String,
               let couplet = kural["couplet"] as? String,
-              let translation = kural["Translation"] as? String else {
+              let translation = kural["Translation"] as? String,
+              let sectionName = kural["section"] as? String else {
             continue
         }
          
@@ -74,6 +75,24 @@ func parseAndStoreData(about: [String: Any], kurals: [[String: Any]]) {
         
         //adding poem to the book
         book.poems?.adding(poemEntity)
+        
+        
+        // Link poem to section
+        
+        if let bookName = book.name {
+            let sectionFetchRequest: NSFetchRequest<Section> = Section.fetchRequest()
+            sectionFetchRequest.predicate = NSPredicate(format: "title == %@ AND bookname == %@", sectionName, bookName)
+
+            do {
+                let sections = try context.fetch(sectionFetchRequest)
+                if let section = sections.first {
+                    poemEntity.setValue(section, forKey: "section")
+                }
+            } catch {
+                print("Failed to fetch sections: \(error)")
+            }
+        }
+    
         
         let expl1 = Explanation(context: context)
         expl1.id = UUID()
@@ -244,6 +263,7 @@ func importCategories(for book: Book) {
                             mainCat.end = 0
                             mainCat.title = detail["name"] as? String
                             mainCat.groupname = section["tamil"] as? String
+                            mainCat.bookname = "திருக்குறள்"
                             mainCat.book = book
                             
                             if let chapterGroups = detail["chapterGroup"] as? [String: Any],
@@ -258,7 +278,9 @@ func importCategories(for book: Book) {
                                     subCat.end = 0
                                     subCat.title = subDetail["name"] as? String
                                     subCat.groupname = chapterGroups["tamil"] as? String
+                                    subCat.bookname = "திருக்குறள்"
                                     subCat.mainCategory = mainCat
+                                    
                                     
                                     if let chapters = subDetail["chapters"] as? [String: Any],
                                        let chapterDetails = chapters["detail"] as? [[String: Any]] {
@@ -271,6 +293,7 @@ func importCategories(for book: Book) {
                                             sec.end = (chapterDetail["end"] as? Int16)!
                                             sec.title = chapterDetail["name"] as? String
                                             sec.groupname = chapters["tamil"] as? String
+                                            sec.bookname = "திருக்குறள்"
                                             sec.subCategory = subCat
                                         }
                                     }

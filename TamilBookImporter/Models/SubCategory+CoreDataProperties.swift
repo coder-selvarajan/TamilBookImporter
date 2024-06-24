@@ -2,7 +2,7 @@
 //  SubCategory+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 23/06/24.
+//  Created by Selvarajan on 24/06/24.
 //
 //
 
@@ -16,14 +16,15 @@ extension SubCategory {
         return NSFetchRequest<SubCategory>(entityName: "SubCategory")
     }
 
+    @NSManaged public var end: Int16
+    @NSManaged public var groupname: String?
     @NSManaged public var id: UUID?
     @NSManaged public var info: String?
     @NSManaged public var number: Int16
+    @NSManaged public var start: Int16
     @NSManaged public var subtitle: String?
     @NSManaged public var title: String?
-    @NSManaged public var start: Int16
-    @NSManaged public var end: Int16
-    @NSManaged public var groupname: String?
+    @NSManaged public var bookname: String?
     @NSManaged public var mainCategory: MainCategory?
     @NSManaged public var poems: NSSet?
     @NSManaged public var sections: NSSet?
