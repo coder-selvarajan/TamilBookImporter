@@ -13,11 +13,20 @@ struct TamilBookImporterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+//            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .onAppear {
-//                    loadInitialDataIfNeeded()
-                }
+                .environment(\.colorScheme, .light)
         }
     }
+    
+//    let persistenceController = CoreDataManager.shared
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            MainCategoryListView()
+//                .environment(\.managedObjectContext, persistenceController.viewContext)
+//        }
+//    }
+    
 }

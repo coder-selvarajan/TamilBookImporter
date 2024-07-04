@@ -2,7 +2,7 @@
 //  Poem+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 24/06/24.
+//  Created by Selvarajan on 04/07/24.
 //
 //
 
@@ -16,6 +16,7 @@ extension Poem {
         return NSFetchRequest<Poem>(entityName: "Poem")
     }
 
+    @NSManaged public var bookname: String?
     @NSManaged public var id: UUID?
     @NSManaged public var number: Int16
     @NSManaged public var poem: String?

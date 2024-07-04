@@ -2,7 +2,7 @@
 //  Section+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 24/06/24.
+//  Created by Selvarajan on 30/06/24.
 //
 //
 
@@ -16,6 +16,7 @@ extension Section {
         return NSFetchRequest<Section>(entityName: "Section")
     }
 
+    @NSManaged public var bookname: String?
     @NSManaged public var end: Int16
     @NSManaged public var groupname: String?
     @NSManaged public var id: UUID?
@@ -24,7 +25,6 @@ extension Section {
     @NSManaged public var start: Int16
     @NSManaged public var subtitle: String?
     @NSManaged public var title: String?
-    @NSManaged public var bookname: String?
     @NSManaged public var poems: NSOrderedSet?
     @NSManaged public var subCategory: SubCategory?
 

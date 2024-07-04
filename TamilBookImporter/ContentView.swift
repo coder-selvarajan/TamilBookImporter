@@ -29,33 +29,48 @@ struct ContentView: View {
             Spacer()
             
             Button {
-                let count = countPoems()
-                let expCount = countExplanations()
-                let bookCount = countBooks()
-                
-                clearAllPoems()
-                info = "\(bookCount) books, \(count) poems and \(expCount) explanations cleared successfully!"
+//                let count = countPoems()
+//                let expCount = countExplanations()
+//                let bookCount = countBooks()
+//                
+//                clearAllPoems()
+//                info = "\(bookCount) books, \(count) poems and \(expCount) explanations cleared successfully!"
             } label: {
                 Text("Clear Database ")
                     .padding(10)
             }
-            .background(.blue)
+            .background(.red)
+            .cornerRadius(10.0)
+            
+            Divider()
+            
+            Button {
+//                loadThirukural()
+//                info = "Thirukural json imported successfully! \n\nTotal Poems: \(countPoems())"
+            } label: {
+                Text("Import 'Thirukural'")
+                    .foregroundColor(.black)
+                    .padding(10)
+            }
+            .background(.white)
             .cornerRadius(10.0)
             
             Button {
-                loadThirukural()
-                info = "Thirukural json imported successfully! \n\nTotal Poems: \(countPoems())"
+//                loadThirukural()
+//                info = "Athichudi json imported successfully! \n\nTotal Poems: \(countPoems())"
             } label: {
-                Text("Import 'Thirukural'")
+                Text("Import 'Athichudi'")
+                    .foregroundColor(.black)
                     .padding(10)
             }
-            .background(.blue)
+            .background(.white)
             .cornerRadius(10.0)
             
             Spacer()
             
         }
         .padding()
+        .frame(maxWidth: 300)
     }
 }
 

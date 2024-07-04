@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 24/06/24.
+//  Created by Selvarajan on 03/07/24.
 //
 //
 
@@ -17,6 +17,7 @@ extension Book {
     }
 
     @NSManaged public var author: String?
+    @NSManaged public var categoryLevel: Int16
     @NSManaged public var color: String?
     @NSManaged public var id: UUID?
     @NSManaged public var image: String?
@@ -25,25 +26,25 @@ extension Book {
     @NSManaged public var noofpoems: Int16
     @NSManaged public var order: Int16
     @NSManaged public var period: String?
-    @NSManaged public var categories: NSSet?
+    @NSManaged public var mainCategories: NSSet?
     @NSManaged public var poems: NSSet?
 
 }
 
-// MARK: Generated accessors for categories
+// MARK: Generated accessors for mainCategories
 extension Book {
 
-    @objc(addCategoriesObject:)
-    @NSManaged public func addToCategories(_ value: MainCategory)
+    @objc(addMainCategoriesObject:)
+    @NSManaged public func addToMainCategories(_ value: MainCategory)
 
-    @objc(removeCategoriesObject:)
-    @NSManaged public func removeFromCategories(_ value: MainCategory)
+    @objc(removeMainCategoriesObject:)
+    @NSManaged public func removeFromMainCategories(_ value: MainCategory)
 
-    @objc(addCategories:)
-    @NSManaged public func addToCategories(_ values: NSSet)
+    @objc(addMainCategories:)
+    @NSManaged public func addToMainCategories(_ values: NSSet)
 
-    @objc(removeCategories:)
-    @NSManaged public func removeFromCategories(_ values: NSSet)
+    @objc(removeMainCategories:)
+    @NSManaged public func removeFromMainCategories(_ values: NSSet)
 
 }
 
