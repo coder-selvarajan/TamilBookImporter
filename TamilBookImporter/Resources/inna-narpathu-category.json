@@ -1,0 +1,34 @@
+{
+    "categories": [
+        {
+            "number": 1,
+            "category": "கடவுள் வாழ்த்து",
+            "start": 0,
+            "end": 0
+        },
+        {
+            "number": 2,
+            "category": "பாடல்கள் (01 - 10)",
+            "start": 1,
+            "end": 10
+        },
+        {
+            "number": 3,
+            "category": "பாடல்கள் (11 - 20)",
+            "start": 11,
+            "end": 20
+        },
+        {
+            "number": 4,
+            "category": "பாடல்கள் (21 - 30)",
+            "start": 21,
+            "end": 30
+        },
+        {
+            "number": 5,
+            "category": "பாடல்கள் (31 - 40)",
+            "start": 31,
+            "end": 40
+        }
+    ]
+}

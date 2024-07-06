@@ -16,6 +16,8 @@ struct TamilBook: Identifiable {
 let TamilBooks = [
     TamilBook(name: "Thirukural", info: "Thirukural is a classic Tamil text consisting of 1,330 couplets."),
     TamilBook(name: "Athichudi", info: "Athichudi is a collection of single-line quotes by Avvaiyar."),
+    TamilBook(name: "IniyavaiNarpathu", info: ""),
+    TamilBook(name: "InnaNarpathu", info: ""),
     TamilBook(name: "Naladiyar", info: "Naladiyar is a Tamil poetic work consisting of 400 quatrains.")
 ]
 
@@ -25,20 +27,33 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             BookListView(selectedBook: $selectedBook)
-            if let selectedBook = selectedBook {
-                if selectedBook.name == "Athichudi" {
-                    BookDetailView(book: selectedBook, 
-                                   bookImporter: AthichudiImporter(poemFile: "athichudi", 
-                                                                   categoryFile: "athichudi-category"))
-                } else if selectedBook.name == "Thirukural" {
-                    BookDetailView(book: selectedBook,
-                                   bookImporter: ThirukuralImporter(poemFile: "thirukural",
-                                                                   categoryFile: "thirukural-category"))
+            Group {
+                if let selectedBook = selectedBook {
+                    switch selectedBook.name {
+                    case "Athichudi":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: AthichudiImporter(poemFile: "athichudi",
+                                                                       categoryFile: "athichudi-category"))
+                    case "Thirukural":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: ThirukuralImporter(poemFile: "thirukural",
+                                                                        categoryFile: "thirukural-category"))
+                    case "IniyavaiNarpathu":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: IniyavaiNarpathuImporter(poemFile: "iniyavai-narpathu",
+                                                                        categoryFile: "iniyavai-narpathu-category"))
+                    case "InnaNarpathu":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: InnaNarpathuImporter(poemFile: "inna-narpathu",
+                                                                        categoryFile: "inna-narpathu-category"))
+                    default:
+                        EmptyView()
+                    }
+                } else {
+                    Text("Select a book")
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
                 }
-            } else {
-                Text("Select a book")
-                    .font(.largeTitle)
-                    .foregroundColor(.gray)
             }
         }
         .frame(minWidth: 600, minHeight: 400)
@@ -47,7 +62,8 @@ struct HomeView: View {
 
 struct BookListView: View {
     @Binding var selectedBook: TamilBook?
- 
+    @State var message: String = ""
+    
     var body: some View {
         ZStack {
             Color.white.ignoresSafeArea()
@@ -63,14 +79,21 @@ struct BookListView: View {
                 
                 Spacer()
                 
+                Text(message)
+                    .padding()
                 Button {
                     _ = clearAllData()
+                    
+                    message = "Database cleared"
                 } label: {
                     Text("Clear Database")
-                        .padding(10)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(10)
                 }
-                .cornerRadius(10.0)
-                .padding(20)
+                .buttonStyle(PlainButtonStyle())
+                .padding()
 
             }
             .frame(minWidth: 200)
@@ -81,8 +104,22 @@ struct BookListView: View {
 struct BookDetailView: View {
     let book: TamilBook
     let bookImporter: BookImporter
-
+    
     @State private var info: String = ""
+    
+    @State private var explanationCount: Int = 0
+    @State private var poemCount: Int = 0
+    @State private var sectionCount: Int = 0
+    @State private var subCatCount: Int = 0
+    @State private var mainCatCount: Int = 0
+    
+    func updateStatus() {
+        explanationCount = bookImporter.getExplanationCount()
+        poemCount = bookImporter.getPoemCount()
+        sectionCount = bookImporter.getSectionCount()
+        subCatCount = bookImporter.getSubCategoryCount()
+        mainCatCount = bookImporter.getMainCategoryCount()
+    }
     
     var body: some View {
         ZStack {
@@ -91,54 +128,108 @@ struct BookDetailView: View {
             VStack(alignment: .leading) {
                 Text(book.name)
                     .font(.largeTitle)
-                    .padding(.bottom)
+                    .padding(.bottom, 10)
                 
-                Text(book.info)
-                    .font(.body)
-                    .padding(.bottom)
-                
-                Text("\(info)")
-                    .font(.body)
-                
-                HStack {
+               
+                VStack(alignment: .leading) {
+                    Text("**Status:**")
+                        .font(.headline)
+                        .padding(.bottom, 2)
                     
-                    Button {
-                        let count = bookImporter.getPoemCount()
-                        if bookImporter.clearBookData() {
-                            info = "\(book.name) data(\(count) poems) cleared successfully!"
-                        } else {
-                            info = "Something went wrong!"
+                    HStack(alignment: VerticalAlignment.top, spacing: 30) {
+                        
+                        VStack(alignment: .leading) {
+                            Text("Category: ")
+                            Text("\(mainCatCount)").bold()
                         }
-                    } label: {
-                        Text("Clear Book Data")
-                            .padding()
+                        VStack(alignment: .leading) {
+                            Text("SubCategory: ")
+                            Text("\(subCatCount)").bold()
+                        }
+                        VStack(alignment: .leading) {
+                            Text("Section: ")
+                            Text("\(sectionCount)").bold()
+                        }
+                        VStack(alignment: .leading) {
+                            Text("Poems: ")
+                            Text("\(poemCount)").bold()
+                        }
+                        VStack(alignment: .leading) {
+                            Text("Meaning: ")
+                            Text("\(explanationCount)").bold()
+                        }
                     }
-                    .cornerRadius(10.0)
-                    .padding()
+                }
+                .padding(20)
+                .background(.gray.opacity(0.15))
+                .cornerRadius(10.0)
+                .padding(.bottom)
+                
+                
+                VStack(alignment: .leading) {
                     
-                    Button {
-                        if bookImporter.importBookInfo() {
-                            if bookImporter.importCategories() {
-                                if bookImporter.importPoems() {
-                                    let count = bookImporter.getPoemCount()
-                                    info = "\(book.name) json imported successfully! \n\nTotal Poems: \(count)"
-                                } else {
-                                    info = "\(book.name) json import failed!"
+                    HStack {
+                        Button {
+                            if bookImporter.clearBookData() {
+                                info = "\(book.name) data cleared successfully!"
+                            } else {
+                                info = "Something went wrong!"
+                            }
+                            updateStatus()
+                            
+                        } label: {
+                            Text("Clear data")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .padding(15)
+                                .background(Color.pink)
+                                .cornerRadius(10)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        Button {
+                            if bookImporter.importBookInfo() {
+                                if bookImporter.importCategories() {
+                                    if bookImporter.importPoems() {
+                                        info = "\(book.name) json imported successfully!"
+                                    } else {
+                                        info = "\(book.name) json import failed!"
+                                    }
                                 }
                             }
+                            updateStatus()
+                        } label: {
+                            Text("Import \(book.name)")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .padding(15)
+                                .background(Color.cyan)
+                                .cornerRadius(10)
                         }
+                        .buttonStyle(PlainButtonStyle())
                         
-                    } label: {
-                        Text("Import Book Data")
-                            .padding()
+                        Button {
+                            updateStatus()
+                        } label: {
+                            Text("Refresh")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .padding(15)
+                                .background(Color.cyan)
+                                .cornerRadius(10)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .cornerRadius(10.0)
-                    .padding()
                 }
-                
+                Text("\(info)")
+                    .font(.title3)
+                    .padding(.top)
                 Spacer()
             }
-            .padding()
+            .padding(50)
+        }
+        .onAppear(){
+            updateStatus()
         }
         
     }

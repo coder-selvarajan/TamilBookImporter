@@ -9,19 +9,101 @@ import Foundation
 import CoreData
 
 protocol BookImporter {
+    var bookName: String { get set }
     var book: Book { get set }
     var poemFile: String { get set }
     var categoryFile: String { get set }
     
     func importBookInfo() -> Bool
     func importCategories() -> Bool
-    func importPoems() -> Bool
-    func clearBookData() -> Bool
-    func getPoemCount() -> Int
+    func importPoems() -> Bool    
 }
 
 extension BookImporter {
-    func clearData(for bookName: String, context: NSManagedObjectContext) -> Bool {
+    
+    // import poems and book info from json file
+    func loadPoemsFromJson(_ poemFile: String) -> ([String: Any], [[String: Any]]) {
+        var aboutFromJson: [String: Any] = [:]
+        var poemsFromJson: [[String: Any]] = []
+        guard let url = Bundle.main.url(forResource: poemFile, withExtension: "json") else {
+            fatalError("Failed to locate \(poemFile).json in app bundle.")
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            if  let jsonDictionary = json as? [String: Any] {
+                aboutFromJson = jsonDictionary["about"] as! [String: Any]
+                poemsFromJson = jsonDictionary["poems"] as! [[String: Any]]
+            }
+        } catch {
+            fatalError("Failed to load json data: \(error.localizedDescription)")
+        }
+        
+        return (aboutFromJson, poemsFromJson)
+    }
+    
+    // import categories from json file
+    func loadCategoriesFromJson(_ categoryFile: String) -> [[String: Any]] {
+        var categoriesFromJson : [[String: Any]] = []
+        guard let url = Bundle.main.url(forResource: categoryFile, withExtension: "json") else {
+            fatalError("Failed to locate \(categoryFile).json in app bundle.")
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            if  let jsonDictionary = json as? [String: Any] {
+                categoriesFromJson = jsonDictionary["categories"] as! [[String: Any]]
+            }
+        } catch {
+            fatalError("Failed to load json data: \(error.localizedDescription)")
+        }
+        
+        return categoriesFromJson
+    }
+    
+    // fetch the count of records from the given entity
+    private func getCount<T: NSFetchRequestResult>(for entity: T.Type) -> Int {
+        let context = PersistenceController.shared.container.viewContext
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: entity))
+        fetchRequest.predicate = NSPredicate(format: "bookname == %@", bookName)
+        var count = 0
+
+        do {
+            count = try context.count(for: fetchRequest)
+        } catch let error as NSError {
+            print("Could not count items. \(error), \(error.userInfo)")
+        }
+
+        return count
+    }
+    
+    func getExplanationCount() -> Int {
+        return getCount(for: Explanation.self)
+    }
+    
+    func getPoemCount() -> Int {
+        return getCount(for: Poem.self)
+    }
+    
+    func getSectionCount() -> Int {
+        return getCount(for: Section.self)
+    }
+    
+    func getSubCategoryCount() -> Int {
+        return getCount(for: SubCategory.self)
+    }
+    
+    func getMainCategoryCount() -> Int {
+        return getCount(for: MainCategory.self)
+    }
+    
+    func clearBookData() -> Bool {
+        let context = PersistenceController.shared.container.viewContext
+        
         // Predicate to filter by bookName
         let predicate = NSPredicate(format: "bookname == %@", bookName)
         
@@ -72,6 +154,7 @@ extension BookImporter {
         print("Book(\(bookName)) data cleared")
         return true
     }
+    
 }
 
 

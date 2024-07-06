@@ -1,75 +1,49 @@
 //
-//  ImportAthichudi.swift
+//  IniyavaiNarpathuImporter.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 03/07/24.
+//  Created by Selvarajan on 06/07/24.
 //
 
 import Foundation
 import CoreData
 
-class AthichudiImporter: BookImporter {
-    var bookName: String = "ஆத்திச்சூடி"
-    var poemFile: String
-    var categoryFile: String
+class IniyavaiNarpathuImporter: BookImporter {
+    var bookName: String = "இனியவை நாற்பது"
     var book: Book
-    
+    var poemFile: String = ""
+    var categoryFile: String = ""
+
     var aboutBook: [String: Any] = [:]
     var categories: [[String: Any]] = []
     var poems: [[String: Any]] = []
     
     let context = PersistenceController.shared.container.viewContext
     
-    internal init(poemFile: String, categoryFile: String) {
+    init(poemFile: String, categoryFile: String) {
         self.categoryFile = categoryFile
         self.poemFile = poemFile
         book = Book(context: context)
         
-        // importing json files content into local objects.
-        loadPoemFile()
-        loadCategoryFile()
-    }
-    
-    private func loadPoemFile() {
-        guard let url = Bundle.main.url(forResource: poemFile, withExtension: "json") else {
-            fatalError("Failed to locate \(poemFile).json in app bundle.")
+        // importing categories from json
+        if categoryFile != "" {
+            categories = loadCategoriesFromJson(categoryFile)
         }
         
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            if  let jsonDictionary = json as? [String: Any] {
-                aboutBook = jsonDictionary["about"] as! [String: Any]
-                poems = jsonDictionary["athichudi"] as! [[String: Any]]
-            }
-        } catch {
-            fatalError("Failed to load json data: \(error.localizedDescription)")
-        }
-    }
-    
-    private func loadCategoryFile() {
-        guard let url = Bundle.main.url(forResource: categoryFile, withExtension: "json") else {
-            fatalError("Failed to locate \(categoryFile).json in app bundle.")
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            if  let jsonDictionary = json as? [String: Any] {
-                categories = jsonDictionary["categories"] as! [[String: Any]]
-            }
-        } catch {
-            fatalError("Failed to load json data: \(error.localizedDescription)")
+        // importing poems from json
+        if poemFile != "" {
+            let dataFromJson = loadPoemsFromJson(poemFile)
+            aboutBook = dataFromJson.0
+            poems = dataFromJson.1
         }
     }
     
     func importBookInfo() -> Bool {
         
         guard let bookname = aboutBook["bookname"] as? String,
-              let description = aboutBook["description"] as? String,
               let author = aboutBook["author"] as? String,
+              let _ = aboutBook["category"] as? String,
+              let description = aboutBook["description"] as? String,
               let noofpoems = aboutBook["noofpoems"] as? Int,
               let period = aboutBook["period"] as? String else {
             return false
@@ -77,7 +51,7 @@ class AthichudiImporter: BookImporter {
         
         book.id = UUID()
         book.author = author
-        book.color = "cyan"
+        book.color = "purple"
         book.name = bookname
         book.noofpoems = Int16(noofpoems)
         book.order = 1
@@ -127,9 +101,7 @@ class AthichudiImporter: BookImporter {
             guard let number = poem["number"] as? Int,
                   let categoryName = poem["category"] as? String,
                   let poemContent = poem["poem"] as? String,
-                  let meaning = poem["meaning"] as? String,
-                  let paraphrase = poem["paraphrase"] as? String,
-                  let translation = poem["translation"] as? String else {
+                  let explanation = poem["explanation"] as? String else {
                 continue
             }
             
@@ -169,31 +141,12 @@ class AthichudiImporter: BookImporter {
             expl1.order = 1
             expl1.poem = poemEntity
             expl1.title = "விளக்கம்: "
-            expl1.meaning = meaning
+            expl1.meaning = explanation
             expl1.bookname = bookName
             
-            let expl2 = Explanation(context: context)
-            expl2.id = UUID()
-            expl2.author = ""
-            expl2.language = "Tamil"
-            expl2.order = 2
-            expl2.poem = poemEntity
-            expl2.title = ""
-            expl2.meaning = paraphrase
-            expl2.bookname = bookName
-            
-            let expl3 = Explanation(context: context)
-            expl3.id = UUID()
-            expl3.author = "Explanation"
-            expl3.language = "English"
-            expl3.order = 3
-            expl3.poem = poemEntity
-            expl3.title = "Explanation"
-            expl3.meaning = translation
-            expl3.bookname = bookName
         }
         
-        //Save poems and explanations into Core data 
+        //Save poems and explanations into Core data
         saveContext()
         
         return true
@@ -206,5 +159,6 @@ class AthichudiImporter: BookImporter {
             fatalError("Failed to save \(bookName) data: \(error.localizedDescription)")
         }
     }
-
+    
+    
 }
