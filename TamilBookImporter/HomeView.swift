@@ -18,12 +18,15 @@ let TamilBooks = [
     TamilBook(name: "Athichudi", info: "Athichudi is a collection of single-line quotes by Avvaiyar."),
     TamilBook(name: "IniyavaiNarpathu", info: ""),
     TamilBook(name: "InnaNarpathu", info: ""),
+    TamilBook(name: "Aacharakkovai", info: ""),
+    TamilBook(name: "Nanmanikadikai", info: ""),
+    TamilBook(name: "Thirikadukam", info: ""),
     TamilBook(name: "Naladiyar", info: "Naladiyar is a Tamil poetic work consisting of 400 quatrains.")
 ]
 
 struct HomeView: View {
     @State private var selectedBook: TamilBook?
-
+    
     var body: some View {
         NavigationView {
             BookListView(selectedBook: $selectedBook)
@@ -46,6 +49,19 @@ struct HomeView: View {
                         BookDetailView(book: selectedBook,
                                        bookImporter: InnaNarpathuImporter(poemFile: "inna-narpathu",
                                                                         categoryFile: "inna-narpathu-category"))
+                    case "Aacharakkovai":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: AacharakkovaiImporter(poemFile: "aacharakkovai",
+                                                                        categoryFile: "aacharakkovai-category"))
+                    case "Nanmanikadikai":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: NanmanikadikaiImporter(poemFile: "nanmanikadikai",
+                                                                        categoryFile: "nanmanikadikai-category"))
+                    case "Thirikadukam":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: ThirikadukamImporter(poemFile: "thirikadukam",
+                                                                        categoryFile: "thirikadukam-category"))
+                        
                     default:
                         EmptyView()
                     }
@@ -132,7 +148,7 @@ struct BookDetailView: View {
                 
                
                 VStack(alignment: .leading) {
-                    Text("**Status:**")
+                    Text("**Record Count:**")
                         .font(.headline)
                         .padding(.bottom, 2)
                     
@@ -140,23 +156,28 @@ struct BookDetailView: View {
                         
                         VStack(alignment: .leading) {
                             Text("Category: ")
-                            Text("\(mainCatCount)").bold()
+                            Text("\(mainCatCount)")
+                                .font(.title)
                         }
                         VStack(alignment: .leading) {
                             Text("SubCategory: ")
-                            Text("\(subCatCount)").bold()
+                            Text("\(subCatCount)")
+                                .font(.title)
                         }
                         VStack(alignment: .leading) {
                             Text("Section: ")
-                            Text("\(sectionCount)").bold()
+                            Text("\(sectionCount)")
+                                .font(.title)
                         }
                         VStack(alignment: .leading) {
                             Text("Poems: ")
-                            Text("\(poemCount)").bold()
+                            Text("\(poemCount)")
+                                .font(.title)
                         }
                         VStack(alignment: .leading) {
                             Text("Meaning: ")
-                            Text("\(explanationCount)").bold()
+                            Text("\(explanationCount)")
+                                .font(.title)
                         }
                     }
                 }

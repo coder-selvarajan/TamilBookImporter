@@ -26,13 +26,19 @@
 		7075B5662C36619E00104967 /* Explanation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075B5642C36619E00104967 /* Explanation+CoreDataClass.swift */; };
 		7075B5672C36619E00104967 /* Explanation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075B5652C36619E00104967 /* Explanation+CoreDataProperties.swift */; };
 		7075B5692C36757300104967 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075B5682C36757300104967 /* HomeView.swift */; };
-		7075B56C2C36C27200104967 /* Poem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075B56A2C36C27200104967 /* Poem+CoreDataClass.swift */; };
-		7075B56D2C36C27200104967 /* Poem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075B56B2C36C27200104967 /* Poem+CoreDataProperties.swift */; };
 		7076CD0B2C35127800816F28 /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076CD092C35127800816F28 /* Book+CoreDataClass.swift */; };
 		7076CD0C2C35127800816F28 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076CD0A2C35127800816F28 /* Book+CoreDataProperties.swift */; };
 		7076CD0F2C3513EB00816F28 /* AthichudiImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076CD0E2C3513EB00816F28 /* AthichudiImporter.swift */; };
 		7076CD112C35170300816F28 /* BookImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076CD102C35170300816F28 /* BookImporter.swift */; };
 		708CBB8A2C291C450037BB58 /* thirukural.json in Resources */ = {isa = PBXBuildFile; fileRef = 708CBB892C291C450037BB58 /* thirukural.json */; };
+		7093B64D2C39609C00D38548 /* aacharakkovai-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7093B64C2C39609C00D38548 /* aacharakkovai-category.json */; };
+		7093B64F2C39691A00D38548 /* AacharakkovaiImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093B64E2C39691A00D38548 /* AacharakkovaiImporter.swift */; };
+		7093B6522C396A2200D38548 /* Poem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093B6502C396A2200D38548 /* Poem+CoreDataClass.swift */; };
+		7093B6532C396A2200D38548 /* Poem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093B6512C396A2200D38548 /* Poem+CoreDataProperties.swift */; };
+		7093B6552C39750400D38548 /* nanmanikadikai-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7093B6542C39750400D38548 /* nanmanikadikai-category.json */; };
+		7093B6572C39769900D38548 /* NanmanikadikaiImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093B6562C39769900D38548 /* NanmanikadikaiImporter.swift */; };
+		7093B6592C39812200D38548 /* ThirikadukamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7093B6582C39812200D38548 /* ThirikadukamImporter.swift */; };
+		7093B65B2C39817700D38548 /* thirikadukam-category.json in Resources */ = {isa = PBXBuildFile; fileRef = 7093B65A2C39817700D38548 /* thirikadukam-category.json */; };
 		70AC81A12C38E613004BFA97 /* iniyavai-narpathu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70AC819A2C38E613004BFA97 /* iniyavai-narpathu.json */; };
 		70AC81A22C38E613004BFA97 /* aacharakkovai.json in Resources */ = {isa = PBXBuildFile; fileRef = 70AC819B2C38E613004BFA97 /* aacharakkovai.json */; };
 		70AC81A32C38E613004BFA97 /* inna-narpathu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70AC819C2C38E613004BFA97 /* inna-narpathu.json */; };
@@ -69,13 +75,19 @@
 		7075B5642C36619E00104967 /* Explanation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7075B5652C36619E00104967 /* Explanation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explanation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7075B5682C36757300104967 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		7075B56A2C36C27200104967 /* Poem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7075B56B2C36C27200104967 /* Poem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7076CD092C35127800816F28 /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7076CD0A2C35127800816F28 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7076CD0E2C3513EB00816F28 /* AthichudiImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthichudiImporter.swift; sourceTree = "<group>"; };
 		7076CD102C35170300816F28 /* BookImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImporter.swift; sourceTree = "<group>"; };
 		708CBB892C291C450037BB58 /* thirukural.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thirukural.json; sourceTree = "<group>"; };
+		7093B64C2C39609C00D38548 /* aacharakkovai-category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "aacharakkovai-category.json"; sourceTree = "<group>"; };
+		7093B64E2C39691A00D38548 /* AacharakkovaiImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AacharakkovaiImporter.swift; sourceTree = "<group>"; };
+		7093B6502C396A2200D38548 /* Poem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7093B6512C396A2200D38548 /* Poem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Poem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7093B6542C39750400D38548 /* nanmanikadikai-category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "nanmanikadikai-category.json"; sourceTree = "<group>"; };
+		7093B6562C39769900D38548 /* NanmanikadikaiImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanmanikadikaiImporter.swift; sourceTree = "<group>"; };
+		7093B6582C39812200D38548 /* ThirikadukamImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirikadukamImporter.swift; sourceTree = "<group>"; };
+		7093B65A2C39817700D38548 /* thirikadukam-category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "thirikadukam-category.json"; sourceTree = "<group>"; };
 		70AC819A2C38E613004BFA97 /* iniyavai-narpathu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "iniyavai-narpathu.json"; sourceTree = "<group>"; };
 		70AC819B2C38E613004BFA97 /* aacharakkovai.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aacharakkovai.json; sourceTree = "<group>"; };
 		70AC819C2C38E613004BFA97 /* inna-narpathu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "inna-narpathu.json"; sourceTree = "<group>"; };
@@ -153,11 +165,14 @@
 				70AC819A2C38E613004BFA97 /* iniyavai-narpathu.json */,
 				70AC81AC2C38F6B9004BFA97 /* inna-narpathu-category.json */,
 				70AC819C2C38E613004BFA97 /* inna-narpathu.json */,
+				7093B64C2C39609C00D38548 /* aacharakkovai-category.json */,
 				70AC819B2C38E613004BFA97 /* aacharakkovai.json */,
+				7093B6542C39750400D38548 /* nanmanikadikai-category.json */,
+				70AC819E2C38E613004BFA97 /* nanmanikadikai.json */,
+				7093B65A2C39817700D38548 /* thirikadukam-category.json */,
+				70AC819D2C38E613004BFA97 /* thirikadukam.json */,
 				70AC819F2C38E613004BFA97 /* naaladiyar-category.json */,
 				70AC81A02C38E613004BFA97 /* naaladiyar.json */,
-				70AC819E2C38E613004BFA97 /* nanmanikadikai.json */,
-				70AC819D2C38E613004BFA97 /* thirikadukam.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,8 +188,8 @@
 				706DF80A2C31334C00D80CC1 /* MainCategory+CoreDataProperties.swift */,
 				706DF80B2C31334C00D80CC1 /* Section+CoreDataClass.swift */,
 				706DF80C2C31334C00D80CC1 /* Section+CoreDataProperties.swift */,
-				7075B56A2C36C27200104967 /* Poem+CoreDataClass.swift */,
-				7075B56B2C36C27200104967 /* Poem+CoreDataProperties.swift */,
+				7093B6502C396A2200D38548 /* Poem+CoreDataClass.swift */,
+				7093B6512C396A2200D38548 /* Poem+CoreDataProperties.swift */,
 				7075B5642C36619E00104967 /* Explanation+CoreDataClass.swift */,
 				7075B5652C36619E00104967 /* Explanation+CoreDataProperties.swift */,
 				7053098E2C270A5C00C070B5 /* TamilLitDB.xcdatamodeld */,
@@ -199,6 +214,9 @@
 				7076CD0E2C3513EB00816F28 /* AthichudiImporter.swift */,
 				70AC81AA2C38EB78004BFA97 /* IniyavaiNarpathuImporter.swift */,
 				70AC81AE2C38F866004BFA97 /* InnaNarpathuImporter.swift */,
+				7093B64E2C39691A00D38548 /* AacharakkovaiImporter.swift */,
+				7093B6562C39769900D38548 /* NanmanikadikaiImporter.swift */,
+				7093B6582C39812200D38548 /* ThirikadukamImporter.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -265,13 +283,16 @@
 				708CBB8A2C291C450037BB58 /* thirukural.json in Resources */,
 				70FE02A62C2850CC00E75842 /* thirukural-category.json in Resources */,
 				70AC81AD2C38F6B9004BFA97 /* inna-narpathu-category.json in Resources */,
+				7093B64D2C39609C00D38548 /* aacharakkovai-category.json in Resources */,
 				70AC81A12C38E613004BFA97 /* iniyavai-narpathu.json in Resources */,
 				70AC81A32C38E613004BFA97 /* inna-narpathu.json in Resources */,
+				7093B6552C39750400D38548 /* nanmanikadikai-category.json in Resources */,
 				705309872C2709FF00C070B5 /* Preview Assets.xcassets in Resources */,
 				705309842C2709FF00C070B5 /* Assets.xcassets in Resources */,
 				7075B5622C363FD600104967 /* athichudi-category.json in Resources */,
 				70AC81A92C38E64C004BFA97 /* iniyavai-narpathu-category.json in Resources */,
 				70AC81A72C38E613004BFA97 /* naaladiyar.json in Resources */,
+				7093B65B2C39817700D38548 /* thirikadukam-category.json in Resources */,
 				7075B5632C363FD600104967 /* athichudi.json in Resources */,
 				70AC81A62C38E613004BFA97 /* naaladiyar-category.json in Resources */,
 				70AC81A52C38E613004BFA97 /* nanmanikadikai.json in Resources */,
@@ -293,21 +314,24 @@
 				7076CD112C35170300816F28 /* BookImporter.swift in Sources */,
 				705309822C2709FD00C070B5 /* ContentView.swift in Sources */,
 				70AC81AF2C38F866004BFA97 /* InnaNarpathuImporter.swift in Sources */,
+				7093B6572C39769900D38548 /* NanmanikadikaiImporter.swift in Sources */,
 				70AC81AB2C38EB78004BFA97 /* IniyavaiNarpathuImporter.swift in Sources */,
 				705309802C2709FD00C070B5 /* TamilBookImporterApp.swift in Sources */,
 				7076CD0B2C35127800816F28 /* Book+CoreDataClass.swift in Sources */,
+				7093B6592C39812200D38548 /* ThirikadukamImporter.swift in Sources */,
 				7076CD0C2C35127800816F28 /* Book+CoreDataProperties.swift in Sources */,
 				706DF8132C31334C00D80CC1 /* SubCategory+CoreDataClass.swift in Sources */,
 				706DF81F2C31378800D80CC1 /* CoreDataManager.swift in Sources */,
 				706DF8142C31334C00D80CC1 /* SubCategory+CoreDataProperties.swift in Sources */,
 				706DF8152C31334C00D80CC1 /* MainCategory+CoreDataClass.swift in Sources */,
 				706DF8162C31334C00D80CC1 /* MainCategory+CoreDataProperties.swift in Sources */,
+				7093B6522C396A2200D38548 /* Poem+CoreDataClass.swift in Sources */,
+				7093B6532C396A2200D38548 /* Poem+CoreDataProperties.swift in Sources */,
 				706DF8172C31334C00D80CC1 /* Section+CoreDataClass.swift in Sources */,
 				7075B5692C36757300104967 /* HomeView.swift in Sources */,
-				7075B56C2C36C27200104967 /* Poem+CoreDataClass.swift in Sources */,
-				7075B56D2C36C27200104967 /* Poem+CoreDataProperties.swift in Sources */,
 				706DF8182C31334C00D80CC1 /* Section+CoreDataProperties.swift in Sources */,
 				705309922C273E8A00C070B5 /* ThirukuralImporter.swift in Sources */,
+				7093B64F2C39691A00D38548 /* AacharakkovaiImporter.swift in Sources */,
 				705309942C273F4E00C070B5 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

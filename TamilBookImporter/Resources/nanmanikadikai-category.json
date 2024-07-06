@@ -1,0 +1,64 @@
+{
+    "categories": [
+        {
+            "number": 1,
+            "category": "பாடல்கள் (01 - 10)",
+            "start": 1,
+            "end": 10
+        },
+        {
+            "number": 2,
+            "category": "பாடல்கள் (11 - 20)",
+            "start": 11,
+            "end": 20
+        },
+        {
+            "number": 3,
+            "category": "பாடல்கள் (21 - 30)",
+            "start": 21,
+            "end": 30
+        },
+        {
+            "number": 4,
+            "category": "பாடல்கள் (31 - 40)",
+            "start": 31,
+            "end": 40
+        },
+        {
+            "number": 5,
+            "category": "பாடல்கள் (41 - 50)",
+            "start": 41,
+            "end": 50
+        },
+        {
+            "number": 6,
+            "category": "பாடல்கள் (51 - 60)",
+            "start": 51,
+            "end": 60
+        },
+        {
+            "number": 7,
+            "category": "பாடல்கள் (61 - 70)",
+            "start": 61,
+            "end": 70
+        },
+        {
+            "number": 8,
+            "category": "பாடல்கள் (71 - 80)",
+            "start": 71,
+            "end": 80
+        },
+        {
+            "number": 9,
+            "category": "பாடல்கள் (81 - 90)",
+            "start": 81,
+            "end": 90
+        },
+        {
+            "number": 10,
+            "category": "பாடல்கள் (91 - 101)",
+            "start": 91,
+            "end": 101
+        }
+    ]
+}
