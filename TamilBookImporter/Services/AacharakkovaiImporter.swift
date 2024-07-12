@@ -56,6 +56,7 @@ class AacharakkovaiImporter: BookImporter {
         book.order = 1
         book.period = period
         book.info = description
+        book.poemType = "பாடல்"
         book.categoryLevel = 1
         
         saveContext()
@@ -144,7 +145,7 @@ class AacharakkovaiImporter: BookImporter {
             expl1.language = "Tamil"
             expl1.order = 1
             expl1.poem = poemEntity
-            expl1.title = "விளக்கம்: "
+            expl1.title = "விளக்கம்"
             expl1.meaning = explanation
             expl1.bookname = bookName
             
@@ -154,7 +155,7 @@ class AacharakkovaiImporter: BookImporter {
             expl2.language = "Tamil"
             expl2.order = 2
             expl2.poem = poemEntity
-            expl2.title = "கருத்துரை: "
+            expl2.title = "கருத்துரை"
             expl2.meaning = commentary
             expl2.bookname = bookName
         }

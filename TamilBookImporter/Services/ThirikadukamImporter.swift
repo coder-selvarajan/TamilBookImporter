@@ -56,6 +56,7 @@ class ThirikadukamImporter: BookImporter {
         book.order = 1
         book.period = period
         book.info = description
+        book.poemType = "பாடல்"
         book.categoryLevel = 1
         
         saveContext()
@@ -143,10 +144,9 @@ class ThirikadukamImporter: BookImporter {
             expl1.language = "Tamil"
             expl1.order = 1
             expl1.poem = poemEntity
-            expl1.title = explanationHeader
+            expl1.title = "விளக்கம்"
             expl1.meaning = explanation
             expl1.bookname = bookName
-            
         }
         
         //Save poems and explanations into Core data
@@ -162,6 +162,4 @@ class ThirikadukamImporter: BookImporter {
             fatalError("Failed to save \(bookName) data: \(error.localizedDescription)")
         }
     }
-    
-    
 }

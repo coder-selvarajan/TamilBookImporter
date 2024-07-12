@@ -83,6 +83,7 @@ class AthichudiImporter: BookImporter {
         book.order = 1
         book.period = period
         book.info = description
+        book.poemType = "வாக்கியம்"
         book.categoryLevel = 1
         
         saveContext()
@@ -139,6 +140,7 @@ class AthichudiImporter: BookImporter {
             poemEntity.poem = poemContent
             poemEntity.poeminfo = ""
             poemEntity.transliteration = ""
+            poemEntity.title = ""
             poemEntity.bookname = bookName
             poemEntity.book = book
             
@@ -168,7 +170,7 @@ class AthichudiImporter: BookImporter {
             expl1.language = "Tamil"
             expl1.order = 1
             expl1.poem = poemEntity
-            expl1.title = "விளக்கம்: "
+            expl1.title = "பதவுரை"
             expl1.meaning = meaning
             expl1.bookname = bookName
             
@@ -178,7 +180,7 @@ class AthichudiImporter: BookImporter {
             expl2.language = "Tamil"
             expl2.order = 2
             expl2.poem = poemEntity
-            expl2.title = ""
+            expl2.title = "பொழிப்புரை"
             expl2.meaning = paraphrase
             expl2.bookname = bookName
             

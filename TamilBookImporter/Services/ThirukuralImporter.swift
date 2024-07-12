@@ -64,6 +64,7 @@ class ThirukuralImporter: BookImporter {
         book.order = 1
         book.period = ""
         book.info = description
+        book.poemType = "குறள்"
         book.categoryLevel = 3
         
         saveContext()
@@ -170,6 +171,7 @@ class ThirukuralImporter: BookImporter {
             poemEntity.poem = "\(line1) \n\(line2)"
             poemEntity.poeminfo = "" // kural["Translation"] as? String ?? ""
             poemEntity.transliteration = "\(transliteration1) \n\(transliteration2)"
+            poemEntity.title = ""
             poemEntity.bookname = bookName
             poemEntity.book = book
             
