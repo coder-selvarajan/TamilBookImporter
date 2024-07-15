@@ -1,15 +1,15 @@
 //
-//  NaaladiyarImporter.swift
+//  MuthumozhikanchiImporter.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 13/07/24.
+//  Created by Selvarajan on 15/07/24.
 //
 
 import Foundation
 import CoreData
 
-class NaaladiyarImporter: BookImporter {
-    var bookName: String = "நாலடியார்"
+class MuthumozhikanchiImporter: BookImporter {
+    var bookName: String = "முதுமொழிக் காஞ்சி"
     var book: Book
     var poemFile: String = ""
     var categoryFile: String = ""
@@ -50,14 +50,14 @@ class NaaladiyarImporter: BookImporter {
         
         book.id = UUID()
         book.author = author
-        book.color = "indigo"
+        book.color = "gray"
         book.name = bookname
         book.noofpoems = Int16(noofpoems)
         book.order = 1
         book.period = period
         book.info = description
-        book.poemType = "பாடல்"
-        book.categoryLevel = 3
+        book.poemType = "பழமொழி"
+        book.categoryLevel = 1
         
         saveContext()
         
@@ -72,53 +72,18 @@ class NaaladiyarImporter: BookImporter {
         for category in categories {
             if let name = category["category"] as? String,
                let number = category["number"] as? Int,
-               let subcategories = category["subcategories"] as? [[String: Any]] {
+               let start = category["start"] as? Int,
+               let end = category["end"] as? Int {
                 
                 let mainCat = MainCategory(context: context)
                 mainCat.id = UUID()
                 mainCat.number = Int16(number)
-                mainCat.start = 0
-                mainCat.end = 0
+                mainCat.start = Int16(start)
+                mainCat.end = Int16(end)
                 mainCat.title = name
-                mainCat.groupname = "பால்"
+                mainCat.groupname = ""
                 mainCat.bookname = bookName
                 mainCat.book = book
-                
-                for subCategory in subcategories {
-                    if let name = subCategory["subcategory"] as? String,
-                       let number = subCategory["number"] as? Int,
-                       let sections = subCategory["sections"] as? [[String: Any]] {
-                        
-                        let subCat = SubCategory(context: context)
-                        subCat.id = UUID()
-                        subCat.number = Int16(number)
-                        subCat.start = 0
-                        subCat.end = 0
-                        subCat.title = name
-                        subCat.groupname = "இயல்"
-                        subCat.bookname = bookName
-                        subCat.mainCategory = mainCat
-                        
-                        for section in sections {
-                            if let name = section["section"] as? String,
-                               let number = section["number"] as? Int,
-                               let start = section["start"] as? Int,
-                               let end = section["end"] as? Int {
-                                
-                                let sec = Section(context: context)
-                                sec.id = UUID()
-                                sec.number = Int16(number)
-                                sec.start = Int16(start)
-                                sec.end = Int16(end)
-                                sec.title = name
-                                sec.groupname = "அதிகாரம்"
-                                sec.bookname = bookName
-                                sec.subCategory = subCat
-                            }
-                        }
-                    }
-                }
-                
             }
         }
         
@@ -133,12 +98,10 @@ class NaaladiyarImporter: BookImporter {
         }
         
         for poem in poems {
-            guard let number = poem["Number"] as? Int,
-                  let _ = poem["Category"] as? String,
-                  let _ = poem["SubCategory"] as? String,
-                  let sectionName = poem["Section"] as? String,
-                  let poemContent = poem["Poem"] as? String,
-                  let explanation = poem["Meaning"] as? String else {
+            guard let number = poem["number"] as? Int,
+                  let categoryName = poem["category"] as? String,
+                  let poemContent = poem["poem"] as? String,
+                  let explanation = poem["explanation"] as? String else {
                 continue
             }
             
@@ -149,24 +112,26 @@ class NaaladiyarImporter: BookImporter {
             poemEntity.poeminfo = ""
             poemEntity.transliteration = ""
             poemEntity.bookname = bookName
+            poemEntity.type = ""
             poemEntity.title = ""
             poemEntity.book = book
             
             //adding poem to the book
             book.poems?.adding(poemEntity)
             
-            // Link poem to section
+            // Link poem to MainCategory
             if let bookName = book.name {
-                let sectionFetchRequest: NSFetchRequest<Section> = Section.fetchRequest()
-                sectionFetchRequest.predicate = NSPredicate(format: "title == %@ AND bookname == %@", sectionName, bookName)
-                
+                let categoryFetchRequest: NSFetchRequest<MainCategory> = MainCategory.fetchRequest()
+                categoryFetchRequest.predicate = NSPredicate(format: "title == %@ AND bookname == %@",
+                                                             categoryName, bookName)
+
                 do {
-                    let sections = try context.fetch(sectionFetchRequest)
-                    if let section = sections.first {
-                        poemEntity.setValue(section, forKey: "section")
+                    let categories = try context.fetch(categoryFetchRequest)
+                    if let category = categories.first {
+                        poemEntity.setValue(category, forKey: "mainCategory")
                     }
                 } catch {
-                    print("Failed to fetch sections: \(error)")
+                    print("Failed to fetch categories: \(error)")
                 }
             }
             
@@ -180,6 +145,7 @@ class NaaladiyarImporter: BookImporter {
             expl1.title = "விளக்கம்"
             expl1.meaning = explanation
             expl1.bookname = bookName
+            
         }
         
         //Save poems and explanations into Core data
@@ -188,7 +154,7 @@ class NaaladiyarImporter: BookImporter {
         return true
     }
     
-    func saveContext() {
+    private func saveContext() {
         do {
             try context.save()
         } catch {

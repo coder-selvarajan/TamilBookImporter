@@ -1,0 +1,64 @@
+{
+    "categories": [
+        {
+            "number": 1,
+            "category": "சிறந்த பத்து",
+            "start": 1,
+            "end": 10
+        },
+        {
+            "number": 2,
+            "category": "அறிவுப்பத்து",
+            "start": 11,
+            "end": 20
+        },
+        {
+            "number": 3,
+            "category": "பழியாப் பத்து",
+            "start": 21,
+            "end": 30
+        },
+        {
+            "number": 4,
+            "category": "துவ்வாப் பத்து",
+            "start": 31,
+            "end": 40
+        },
+        {
+            "number": 5,
+            "category": "அல்ல பத்து",
+            "start": 41,
+            "end": 50
+        },
+        {
+            "number": 6,
+            "category": "இல்லைப் பத்து",
+            "start": 51,
+            "end": 60
+        },
+        {
+            "number": 7,
+            "category": "பொய்ப் பத்து",
+            "start": 61,
+            "end": 70
+        },
+        {
+            "number": 8,
+            "category": "எளிய பத்து",
+            "start": 71,
+            "end": 80
+        },
+        {
+            "number": 9,
+            "category": "நல்கூர்ந்த பத்து",
+            "start": 81,
+            "end": 90
+        },
+        {
+            "number": 10,
+            "category": "தண்டாப் பத்து",
+            "start": 91,
+            "end": 100
+        }
+    ]
+}

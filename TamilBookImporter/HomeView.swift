@@ -21,7 +21,9 @@ let TamilBooks = [
     TamilBook(name: "Aacharakkovai", info: ""),
     TamilBook(name: "Nanmanikadikai", info: ""),
     TamilBook(name: "Thirikadukam", info: ""),
-    TamilBook(name: "Naaladiyar", info: "Naladiyar is a Tamil poetic work consisting of 400 quatrains.")
+    TamilBook(name: "Naaladiyar", info: "Naladiyar is a Tamil poetic work consisting of 400 quatrains."),
+    TamilBook(name: "Muthumozhikanchi", info: ""),
+    TamilBook(name: "Pazhamozhinanooru", info: "")
 ]
 
 struct HomeView: View {
@@ -65,7 +67,15 @@ struct HomeView: View {
                         BookDetailView(book: selectedBook,
                                        bookImporter: NaaladiyarImporter(poemFile: "naaladiyar",
                                                                         categoryFile: "naaladiyar-category"))
-                        
+                    case "Muthumozhikanchi":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: MuthumozhikanchiImporter(poemFile: "muthumozhikanchi",
+                                                                        categoryFile: "muthumozhikanchi-category"))
+                    case "Pazhamozhinanooru":
+                        BookDetailView(book: selectedBook,
+                                       bookImporter: PazhamozhiNanooruImporter(poemFile: "pazhamozhinanooru",
+                                                                        categoryFile: "pazhamozhinanooru-category"))
+                    
                     default:
                         EmptyView()
                     }

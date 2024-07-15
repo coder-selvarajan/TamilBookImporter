@@ -1,0 +1,214 @@
+{
+    "categories": [
+        {
+            "number": 0,
+            "category": "கடவுள் வணக்கம்",
+            "start": 0,
+            "end": 0
+        },
+        {
+            "number": 1,
+            "category": "கல்வி",
+            "start": 1,
+            "end": 10
+        },
+        {
+            "number": 2,
+            "category": "கல்லாதார்",
+            "start": 11,
+            "end": 16
+        },
+        {
+            "number": 3,
+            "category": "அவையறிதல்",
+            "start": 17,
+            "end": 25
+        },
+        {
+            "number": 4,
+            "category": "அறிவுடைமை",
+            "start": 26,
+            "end": 33
+        },
+        {
+            "number": 5,
+            "category": "ஒழுக்கம்",
+            "start": 34,
+            "end": 42
+        },
+        {
+            "number": 6,
+            "category": "இன்னா செய்யாமை",
+            "start": 43,
+            "end": 50
+        },
+        {
+            "number": 7,
+            "category": "வெகுளாமை",
+            "start": 52,
+            "end": 59
+        },
+        {
+            "number": 8,
+            "category": "பெரியாரைப் பிழையாமை",
+            "start": 60,
+            "end": 64
+        },
+        {
+            "number": 9,
+            "category": "புகழ்தலின் கூறுபாடு",
+            "start": 65,
+            "end": 68
+        },
+        {
+            "number": 10,
+            "category": "சான்றோர் இயல்பு",
+            "start": 69,
+            "end": 80
+        },
+        {
+            "number": 11,
+            "category": "சான்றோர் செய்கை",
+            "start": 81,
+            "end": 89
+        },
+        {
+            "number": 12,
+            "category": "கீழ்மக்கள் இயல்பு",
+            "start": 90,
+            "end": 106
+        },
+        {
+            "number": 13,
+            "category": "கீழ்மக்கள் செய்கை",
+            "start": 107,
+            "end": 123
+        },
+        {
+            "number": 14,
+            "category": "நட்பின் இயல்பு",
+            "start": 124,
+            "end": 134
+        },
+        {
+            "number": 15,
+            "category": "நட்பில் விலக்கு",
+            "start": 135,
+            "end": 141
+        },
+        {
+            "number": 16,
+            "category": "பிறர் இயல்பைக் குறிப்பால் உணர்தல்",
+            "start": 142,
+            "end": 148
+        },
+        {
+            "number": 17,
+            "category": "முயற்சி",
+            "start": 149,
+            "end": 161
+        },
+        {
+            "number": 18,
+            "category": "கருமம் முடித்தல்",
+            "start": 162,
+            "end": 176
+        },
+        {
+            "number": 19,
+            "category": "மறை பிறர் அறியாமை",
+            "start": 177,
+            "end": 182
+        },
+        {
+            "number": 20,
+            "category": "தெரிந்து தெளிதல்",
+            "start": 183,
+            "end": 195
+        },
+        {
+            "number": 21,
+            "category": "பொருள்",
+            "start": 196,
+            "end": 204
+        },
+        {
+            "number": 22,
+            "category": "பொருளைப் பெறுதல்",
+            "start": 205,
+            "end": 212
+        },
+        {
+            "number": 23,
+            "category": "நன்றியில் செல்வம்",
+            "start": 213,
+            "end": 226
+        },
+        {
+            "number": 24,
+            "category": "ஊழ்",
+            "start": 227,
+            "end": 240
+        },
+        {
+            "number": 25,
+            "category": "அரசியல்பு",
+            "start": 241,
+            "end": 257
+        },
+        {
+            "number": 26,
+            "category": "அமைச்சர்",
+            "start": 258,
+            "end": 265
+        },
+        {
+            "number": 27,
+            "category": "மன்னரைச் சேர்ந்தொழுகல்",
+            "start": 266,
+            "end": 284
+        },
+        {
+            "number": 28,
+            "category": "பகைத்திறம் தெரிதல்",
+            "start": 285,
+            "end": 310
+        },
+        {
+            "number": 29,
+            "category": "படைவீரர்",
+            "start": 311,
+            "end": 326
+        },
+        {
+            "number": 30,
+            "category": "இல்வாழ்க்கை",
+            "start": 327,
+            "end": 347
+        },
+        {
+            "number": 31,
+            "category": "உறவினர்",
+            "start": 348,
+            "end": 356
+        },
+        {
+            "number": 32,
+            "category": "அறம் செய்தல்",
+            "start": 357,
+            "end": 371
+        },
+        {
+            "number": 33,
+            "category": "ஈகை",
+            "start": 372,
+            "end": 386
+        },
+        {
+            "number": 34,
+            "category": "வீட்டு நெறி",
+            "start": 387,
+            "end": 400
+        }
+    ]
+}
