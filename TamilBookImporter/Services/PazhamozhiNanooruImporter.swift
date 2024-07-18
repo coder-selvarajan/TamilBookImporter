@@ -130,6 +130,7 @@ class PazhamozhiNanooruImporter: BookImporter {
                     let categories = try context.fetch(categoryFetchRequest)
                     if let category = categories.first {
                         poemEntity.setValue(category, forKey: "mainCategory")
+                        poemEntity.maincategoryname = category.title ?? ""
                     }
                 } catch {
                     print("Failed to fetch categories: \(error)")

@@ -164,6 +164,11 @@ class NaaladiyarImporter: BookImporter {
                     let sections = try context.fetch(sectionFetchRequest)
                     if let section = sections.first {
                         poemEntity.setValue(section, forKey: "section")
+                        poemEntity.sectionname = section.title ?? ""
+                        if let subCat = section.subCategory, let mainCat = subCat.mainCategory {
+                            poemEntity.subcategoryname = subCat.title ?? ""
+                            poemEntity.maincategoryname = mainCat.title ?? ""
+                        }
                     }
                 } catch {
                     print("Failed to fetch sections: \(error)")

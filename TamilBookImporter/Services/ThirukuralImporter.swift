@@ -43,8 +43,6 @@ class ThirukuralImporter: BookImporter {
             if  let jsonDictionary = json as? [String: Any] {
                 aboutBook = jsonDictionary["about"] as! [String: Any]
                 poems = jsonDictionary["kural"] as! [[String: Any]]
-                
-//                parseAndStoreData(about: about, kurals: poems)
             }
         } catch {
             fatalError("Failed to load initial data: \(error.localizedDescription)")
@@ -187,12 +185,16 @@ class ThirukuralImporter: BookImporter {
                     let sections = try context.fetch(sectionFetchRequest)
                     if let section = sections.first {
                         poemEntity.setValue(section, forKey: "section")
+                        poemEntity.sectionname = section.title ?? ""
+                        if let subCat = section.subCategory, let mainCat = subCat.mainCategory {
+                            poemEntity.subcategoryname = subCat.title ?? ""
+                            poemEntity.maincategoryname = mainCat.title ?? ""
+                        }
                     }
                 } catch {
                     print("Failed to fetch sections: \(error)")
                 }
             }
-            
             
             let expl1 = Explanation(context: context)
             expl1.id = UUID()
