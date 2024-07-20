@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class AthichudiImporter: BookImporter {
-    var bookName: String = "ஆத்திச்சூடி"
+    var bookName: String = "ஆத்திசூடி"
     var poemFile: String
     var categoryFile: String
     var book: Book
