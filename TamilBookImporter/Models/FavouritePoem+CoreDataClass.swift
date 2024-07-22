@@ -1,5 +1,5 @@
 //
-//  Poem+CoreDataClass.swift
+//  FavouritePoem+CoreDataClass.swift
 //  TamilBookImporter
 //
 //  Created by Selvarajan on 22/07/24.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Poem)
-public class Poem: NSManagedObject {
+@objc(FavouritePoem)
+public class FavouritePoem: NSManagedObject {
 
 }
