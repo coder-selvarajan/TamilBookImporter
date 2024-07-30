@@ -259,7 +259,11 @@ class ThirukuralImporter: BookImporter {
         
         saveContext()
         
+        // Add daily poems for the last 3 days
+        addDailyPoemRecords()
+        
         return true
+        
     }
     
     //// Call this function in your App initialization
@@ -272,6 +276,51 @@ class ThirukuralImporter: BookImporter {
     //        userDefaults.set(true, forKey: "isDataLoaded")
     //    }
     //}
+    
+    func addDailyPoemRecords() {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+
+        // Create the first DailyPoem record for one day ago
+        if let date1 = calendar.date(byAdding: .day, value: -1, to: today) {
+            let dailyPoem1 = DailyPoem(context: context)
+            dailyPoem1.bookname = "திருக்குறள்"
+            dailyPoem1.category = "கடவுள் வாழ்த்து"
+            dailyPoem1.date = date1
+            dailyPoem1.id = UUID()
+            dailyPoem1.number = 5
+            dailyPoem1.poem = "இருள்சேர் இருவினையும் சேரா இறைவன் \nபொருள்சேர் புகழ்புரிந்தார் மாட்டு."
+        }
+
+        // Create the second DailyPoem record for two days ago
+        if let date2 = calendar.date(byAdding: .day, value: -2, to: today) {
+            let dailyPoem2 = DailyPoem(context: context)
+            dailyPoem2.bookname = "நான்மணிக்கடிகை"
+            dailyPoem2.category = ""
+            dailyPoem2.date = date2
+            dailyPoem2.id = UUID()
+            dailyPoem2.number = 45
+            dailyPoem2.poem = "நாற்ற முரைக்கும் மலருண்மை கூறிய \nமாற்ற முரைக்கும் வினைநலந் தூக்கின் \nஅகம்பொதிந்த தீமை மனமுரைக்கும் முன்னம் \nமுகம்போல முன்னுரைப்ப தில்."
+
+        }
+
+        // Create the third DailyPoem record for three days ago
+        if let date3 = calendar.date(byAdding: .day, value: -3, to: today) {
+            let dailyPoem3 = DailyPoem(context: context)
+            dailyPoem3.bookname = "நாலடியார்"
+            dailyPoem3.category = "யாக்கை நிலையாமை"
+            dailyPoem3.date = date3
+            dailyPoem3.id = UUID()
+            dailyPoem3.number = 21
+            dailyPoem3.poem = "மலைமிசைத் தோன்றும் மதியம்போல் யானைத் \nதலைமிசைக் கொண்ட குடையர் - நிலமிசைத் \nதுஞ்சினார் என்றெடுத்துத் தூற்றப்பட் டாரல்லால் \nஎஞ்சினார் இவ்வுலகத் தில்."
+        }
+        
+        // Save the context
+        saveContext()
+
+    }
+
+    
     
     private func saveContext() {
         do {

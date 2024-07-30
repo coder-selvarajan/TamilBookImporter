@@ -2,7 +2,7 @@
 //  Poem+CoreDataProperties.swift
 //  TamilBookImporter
 //
-//  Created by Selvarajan on 22/07/24.
+//  Created by Selvarajan on 30/07/24.
 //
 //
 
@@ -27,6 +27,7 @@ extension Poem {
     @NSManaged public var title: String?
     @NSManaged public var transliteration: String?
     @NSManaged public var type: String?
+    @NSManaged public var tag: String?
     @NSManaged public var book: Book?
     @NSManaged public var explanations: NSOrderedSet?
     @NSManaged public var mainCategory: MainCategory?
